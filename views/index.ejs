@@ -1,0 +1,79 @@
+<% layout('layouts/boilerplate') %>
+
+<body>
+  <!-- NAVBAR -->
+
+  <div id="container">
+    <h1 class="ms-3" style="color: antiquewhite;">All Posts</h1>
+
+    <br />
+    <form action="/posts/new" method="get">
+      <button class="btn btn-outline-primary ms-3">Add New Post</button>
+    </form>
+    <br />
+
+    <% for(let Posts of allPosts){ %>
+      <div class="card-container">
+        <div class="container">
+          <div class="ball-1"></div>
+          <div class="ball-2"></div>
+          <div class="ball-3"></div>
+    
+          <div class="box">
+            <div class="contains">
+              <div class="section-1">
+  <!-- //////////////////////////////////////////// -->
+      <div class=" mb-3 ms-3 me-3">
+        <ul>
+          <div class="card-header">
+            <li>
+              <span>Post id:</span>
+              <%= Posts._id %>
+            </li>
+  
+            <li>
+              <span>Creator:</span>
+              <%= Posts.creator %>
+            </li>
+          </div>
+  
+          <li style="color: rgb(239 166 71)">
+            <span>Question:</span> <i> <%= Posts.question %> </i>
+          </li>
+          <br />
+          <li>
+            <span>Created at:</span> <%=Posts.created_at.toString().split(" ")[4]
+            %>
+          </li>
+          <li>
+            <%=Posts.created_at.toString().split(" ").slice(0,4).join(" -") %>
+          </li>
+          <br />
+  
+          <li>
+            <span>Modified at:</span>
+            <%=Posts.updated_at %>
+          </li>
+          <form action="/posts/<%= Posts._id %>" method="get">
+            <button class="viewbtn btn btn-outline-success mt-3 mb-3">
+              View in Detail
+            </button>
+          </form>
+        </ul>
+      </div>
+  
+  
+  <!-- /////////////////////////////// -->
+    </div>
+    <!-- 
+              <div class="section-2">
+                <img src="#"  alt="Some error in loading image" height="100vh" width="100vh">
+              </div> -->
+            </div>
+          </div>
+        </div>
+      </div>
+    <% } %>
+  </div>
+
+</body>

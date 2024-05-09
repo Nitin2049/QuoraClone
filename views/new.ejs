@@ -1,0 +1,47 @@
+<% layout('layouts/boilerplate') %>
+<body>
+  <h1 class="ms-4 mb-3">Make a new Post</h1>
+
+  <div class="form-container ms-4">
+    <form action="/posts" method="post" class="needs-validation" novalidate>
+        <div>
+          <label for="creator" class="form-label">Creator</label>
+          <input
+            type="text"
+            class="form-control"
+            name="creator"
+            placeholder="enter your name"
+            required
+          />
+          <div class="valid-feedback">Great Name!</div>
+        </div>
+        <br />
+    
+        <div>
+          <label for="question" class="form-label">Question</label>
+          <input
+            type="text"
+            name="question"
+            class="form-control"
+            placeholder="Your Question"
+            required
+          /><br />
+        </div>
+    
+        <div>
+          <label for="answer" class="form-label">Answer</label>
+          <textarea
+            name="answer"
+            cols="50"
+            rows="5"
+            class="form-control"
+            placeholder="Your Answer"
+            required
+          ></textarea>
+        </div>
+        <br />
+    
+        <button class="btn btn-outline-success">Post</button>
+      </form>
+  </div>
+</body>

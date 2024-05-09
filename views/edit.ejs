@@ -1,0 +1,20 @@
+<% layout('layouts/boilerplate') %>
+
+<body>
+    <ul>
+        <li><span>Post id:</span> <%= post._id %></li>
+        <li><span>Creator: </span> <i> <%= post.creator %></i></li>
+        <li><span>Question:</span> <i> <%= post.question %></i></li>
+    </ul>
+    
+    <form action="/posts/<%= post._id %>?_method=PUT" method="post" class="needs-validation" novalidate>
+
+       <div class="ms-4">
+        <label for="answer" class="form-label">Answer</label>
+        <textarea  id="answer" name="answer" class="form-control" cols="50" rows="5" required><%= post.answer %></textarea>
+       
+        <button class="btn btn-outline-success mt-4">Save</button>
+    </div><br>
+    </form>
+
+</body>
