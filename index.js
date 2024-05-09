@@ -24,7 +24,7 @@ main()
   });
 
 async function main() {
-  await mongoose.connect("mongodb://127.0.0.1:27017/quora");
+  await mongoose.connect("mongodb+srv://singhnitin2050:UE0p1gQ8fQxbICCx@clusterquoraclone.eswixko.mongodb.net/?retryWrites=true&w=majority&appName=ClusterQuoraClone");
 }
 
 // WRAPSYNC FUNCTION
