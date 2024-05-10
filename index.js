@@ -57,7 +57,7 @@ app.post("/posts", wrapAsync(async (req, res, next) => {
     });
     newPost.save();
 
-    res.redirect("/posts");
+    res.redirect("/");
   })
 );
 
@@ -85,7 +85,7 @@ app.put("/posts/:id", wrapAsync(async (req, res, next) => {
     let { answer: answer } = req.body;
     let updated_at = new Date();
     let newPost = await Post.findByIdAndUpdate(id,{answer: answer, updated_at: updated_at }, { runValidators: true, new: true });
-    res.redirect("/posts");
+    res.redirect("/");
   })
 );
 
@@ -93,7 +93,7 @@ app.put("/posts/:id", wrapAsync(async (req, res, next) => {
 app.delete("/posts/:id", wrapAsync(async (req, res, next) => {
     let { id } = req.params;
     let deletedPost = await Post.findByIdAndDelete(id);
-    res.redirect("/posts");
+    res.redirect("/");
   })
 );
 
