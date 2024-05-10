@@ -33,6 +33,9 @@ function wrapAsync(fn) {
     fn(req, res, next).catch((err) => next(err));
   };
 }
+app.get("/", (req, res)=>{
+  res.send("Website Working");
+};
 
 // INDEX ROUTE
 app.get("/posts", wrapAsync(async (req, res, next) => {
