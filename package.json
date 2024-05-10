@@ -3,7 +3,7 @@
   "node": "18.17.1"
 },
 
-  "name": "mongo3",
+  "name": "quoraclone",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
